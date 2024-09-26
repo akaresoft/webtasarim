@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Div</title>
+
+    <style>
+        .kutu{
+            width: 200px;  height:200px;
+            border: 3px solid grey; /* Çerçeve  kalınlığı,stili,rengi */
+            text-align: justify; /* yazıyı iki yana yasla*/
+            font-size:20px; /* font büyüklüğü*/
+            float:left; /*sol hizalar*/
+            margin:5px; /* Dış boşluk */
+            padding:10px; /* İç boşluk */
+            border-radius: 20px; /*K>öşeleri yuvarlatır */
+            box-shadow: rgb(38,57,77) 0px 20px 30px -10px; /*Gölge*/
+        }
+        .kutu:hover{ /*Mouse üzerine gelince olacaklar */
+            background-color: rgba(9, 9, 9, 0.877);
+            color:white;
+            font-size:25px;
+        }
+        .mavi{background-color: rgba(0, 0, 255, 0.777); color:white}
+        .mor{background-color: rgb(93, 14, 166); color:white}
+        .kirmizi{background-color: tomato;}
+        .sari{background-color: rgba(255, 255, 0, 0.458);}
+    </style>
+</head>
+<body>
+    <div class="kutu mavi">
+         Mesaj 1: <br>  Faturalar yatırılacak.
+    </div>
+    <div class="kutu sari">
+        Mesaj 2: <br> Kiralar ödenecek.
+   </div>
+   <div class="kutu mor">
+    Mesaj 3: <br> Kiralar ödenecek.
+    </div>
+    <div class="kutu kirmizi">
+        Mesaj 4: <br> Kiralar ödenecek.
+    </div>
+</body>
+</html>

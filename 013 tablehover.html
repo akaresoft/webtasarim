@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tr:hover{ /* mouse satır üzerine gelince biçimlendirilmesini sağlar*/
+            background-color: rgb(115, 0, 255);
+            color:#FFF;
+        }
+
+      td:hover{ /*Üzerine mouse gelince hücrenin biçimlendirilmesi*/
+
+            background-color: maroon;
+            color:FFF;
+            cursor: pointer; /* mouse'u el simgesine çevirir
+            */
+        }
+
+        tr:nth-child(even){ /* çift numaralı satırların rengini değiştir*/
+            background-color: #d9e4f3;
+        }
+
+        td{
+            line-height: 20px; /* satır yüksekliği 20px */
+            padding: 3px; /* iç boşluk, yazının çerçeve sınırına uzaklığı*/
+            margin:1px; /* tablonun etrafındaki boşluk */
+        }
+
+    </style>
+</head>
+<body>
+
+    <table id="mytable" border="1" align="center">
+        <tr>
+            <td>No</td>
+            <td>Zaman</td>
+            <td>İş</td>
+
+        </tr>
+        <tr>
+            <td>1</td>
+             <td>10:00</td>
+             <td>ABC Müşteri Görüşmesi</td>
+        </tr>
+        <tr>
+             <td>2</td>
+             <td>11:00</td>
+             <td>Frontend Kodlama</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>12:00</td>
+            <td>Backend Kodlama</td>
+       </tr>
+    </table>
+    
+</body>
+</html>
