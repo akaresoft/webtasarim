@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Oğuzhan TAŞ Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <style>
+        *{
+            font-family: "Poppins", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+            font-size: 15px;
+            margin:0px;
+        }
         #banner{
             width: 100%;
             height: 100px;
@@ -15,13 +25,13 @@
         #navigation{
             margin:0px;
             background-color: grey;
-            height: 30px;
+            height: 35px;
             
         }
 
         #menu{
-            font-size:15px;
-            /*width: 100%; /*Genişlik tam ekran*/
+            font-size:12px;
+            width: 100%; /*Genişlik tam ekran*/
             margin: 0px;
             padding: 0px;
             float:left;
@@ -29,7 +39,7 @@
 
         #menu li{
           /*  background-color: #8a2be2;*/
-            background: linear-gradient(#8a2be2, #17012b);
+            background: linear-gradient(#2b3de2, #010163);
             color:#FFF;
             padding: 5px 10px 5px 10px;
             display:inline;/* Yatay dönüşüm sağlar*/
@@ -39,63 +49,127 @@
 
         #menu li:hover{
             /*background-color: rgb(226, 43, 113);*/
-            background: linear-gradient(#17012b, #8a2be2);
+            background: linear-gradient(#060151, #2ba2e2);
         }
 
         #content-left{ /* sol içerik */
-            min-height: 100px;
-            width: 25%;
+            min-height: 350px;
+            width: 14%;
             background-color: yellowgreen;
             float:left;
+            padding-left:0.5%;
+            padding-right:0.5%;
         }
 
         #content-center{
-            min-height: 100px;
-            width: 50%;
-            background-color: yellow;
-            float:left
+            min-height: 350px;
+            padding-bottom:10px;
+            width: 60%;
+            background-color: rgb(198, 198, 198);
+            float:left;
+
+        }
+
+        #content-post{
+
+            width: 22%;
+            background-color: rgb(255, 254, 254);
+            height: 300px;
+            margin-left: 1%;
+            margin-top:1%;
+            padding:10px;
+            float:left;
+            display: block;
+            overflow: hidden; /* Taşma olursa gizle */
+            word-wrap: normal;
+        }
+        #content-post:hover{
+            background-color: #0f0fb8;
+            color:#FFF;
         }
         
         #content-right{
-            min-height: 100px;
-            width: 25%;
+            min-height: 330px;
+            width: 14%;
             background-color: green;
             float:left;
+            padding-left:0.5%;
+            padding-right:0.5%;
+            display: block;
+            
         }
 
         #footer{
             width: 100%;
-            height: 250px;
+            height: 400px;
             background-color: rgb(60, 58, 58);
+            display: block;
         }
+       
 
         #footer-left{
-            margin-left:5%;
-            width:20% ;
+            /*margin-left:5%;*/
+            width:25%;
             background-color: red;
             float:left;
+            height: 100px;
          
         }
         #footer-center{
-            width:50% ;
+            width:50%;
             background-color: rgb(158, 150, 5);
             float:left;
+            height: 100px;
          
         }
         #footer-right{
-            margin-right:5%;
-            width:20% ;
+           /* margin-right:5%;*/
+            width:25%;
             background-color: orange;
-            float:left
+            float:left;
+            height: 100px;
          
         }
 
+        #footer-band{
+            width: 98%;
+            height: 30px;
+            background-color: #010163;
+            color:#2ba2e2;
+            text-align: right;
+            padding-right: 2%;
+        }
+
+        #haberresim{
+            width: 100%;
+        }
+        #haberbaslik{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #habericerik{
+            font-size:13px;
+            text-align: justify;
+        }
+
+
+        h3 {
+            font-size:17px;
+            font-weight: bold;
+        }
+        #kategoriler {
+          background-color: #2ba2e2;
+        }
+        #kategoriler li{
+            font-size:17px;
+            list-style-type: none;
+        }
     </style>
 </head>
 <body>
     <!-- banner-->
     <div id="banner">
-
+            <h3>banner</h3>
     </div>
     <!-- navigator çubuğu -->
     <div id="navigation">
@@ -110,24 +184,109 @@
     </div> <!-- nav bitiş -->
 
     <div id="content-left">
-        <h3>sol taraf</h3>
+        <h3>Kategoriler</h3>
+        <ul id="kategoriler">
+            <li>Veritabanı</li>
+            <li>Web Tasarım</li>
+            <li>Mobil Programlama</li>
+        </ul>
     </div>
 
     <div id="content-center">
-        <h3>orta</h3>
+        <div id="content-post">
+            <img src="images/resim1.jpg" id="haberresim">    
+            <span id="haberbaslik">C# ile Veritabanı</span>    
+            <p id="habericerik">
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+               
+            </p>
+        </div>
+
+        <div id="content-post">           
+            <img src="images/resim2.jpg"  id="haberresim">   
+            <span id="haberbaslik">C# ile Veritabanı</span>    
+            <p id="habericerik">
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+              
+             </p>  
+        </div>
+
+        <div id="content-post">
+            <img src="images/resim3.jpg"  id="haberresim"> 
+            <span id="haberbaslik">C# ile Veritabanı</span>    
+            <p id="habericerik">
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+        </div>
+
+        <div id="content-post">
+            <img src="images/resim3.jpg"  id="haberresim">     
+            <span id="haberbaslik">C# ile Veritabanı</span>    
+            <p id="habericerik">
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+            </p>
+        </div>
+
+        
+        <div id="content-post">
+            <img src="images/resim3.jpg"  id="haberresim"> 
+            <span id="haberbaslik">C# ile Veritabanı</span>    
+            <p id="habericerik">
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+        </div>
+
+        
+        <div id="content-post">
+            <img src="images/resim3.jpg"  id="haberresim"> 
+            <span id="haberbaslik">C# ile Veritabanı</span>    
+            <p id="habericerik">
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+        </div>
+
+        
+        <div id="content-post">
+            <img src="images/resim3.jpg"  id="haberresim"> 
+            <span id="haberbaslik">C# ile Veritabanı</span>    
+            <p id="habericerik">
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+        </div>
+        
+        <div id="content-post">
+            <img src="images/resim3.jpg"  id="haberresim"> 
+            <span id="haberbaslik">C# ile Veritabanı</span>    
+            <p id="habericerik">
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+                Bu dersimizde C# ile SQL Server veritabanına bağlanılacaktır.
+        </div>
+
+
     </div>
     
     <div id="content-right">
-        <h3>sağ taraf</h3>
+        <h3>En çok okunan Makaleler</h3>
+        <ul>
+            <li>Makale 1</li>
+            <li>Makale 2</li>
+            <li>Makale 3</li>
+        </ul>
     </div>
 
-    <div id="footer">
+   <!-- <div id="footer">
 
         <div id="footer-left">SOL </div>
         <div id="footer-center">ORTA </div>
         <div id="footer-right">SAĞ </div>
-
     </div>
-   
+
+    <div id="footer-band">
+        All rights reserved. ABC Yazılım
+    </div>
+-->
 </body>
 </html>
