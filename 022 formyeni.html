@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="kaydet.php" method="post" >
+
+
+        <input type="text" name="adi" id="adi" placeholder="Adınızı giriniz" autocomplete="off" required> <br>
+
+        <input type="text" name="soyadi" id="soyadi" placeholder="Soyadınızı giriniz" required>        <br>
+
+        <label for="">Randevu Tarihi ve Saati</label>
+        <input type="datetime-local" name="rtarih" id="rtarih">        <br>
+        Ay-Yıl
+        <input type="month" name="ay">        <br>
+        Hafta
+        <input type="week" name="hafta" id="hafta">        <br>
+        Saat
+        <input type="time" name="saat" id="saat">        <br>
+        Aralık
+        <input type="range" name="aralik" id="">        <br>
+        Arama
+        <input type="search" name="arama" id="">        <br>
+        Adet giriniz
+        <input type="number" name="adet"  step="5" id="">        <br>
+        Telefon
+        <input type="tel" name="telefon" id="">
+        <br>
+        Şehir 
+        <select name="sehir" id="sehir" multiple>
+            <option value="01">Adana</option>
+            <option value="34">İstanbul</option>
+            <option value="06">Ankara</option>
+            <option value="35">İzmir</option>
+        </select> <br>
+
+        <meter id="bulent" min="0" low="40" high="90" max="100" value="55"></meter>50</p>
+        <meter id="umit" min="0" low="40" high="90" max="100" value="100"></meter>100</p>
+        <meter id="sinan" min="0" low="40" high="90" max="100" value="20"></meter>100</p>
+        <input type="submit" value="Kaydet">
+
+    </form>
+
+</body>
+</html>

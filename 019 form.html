@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form HTML5</title>
+    <style>   
+            input:focus{background-color: yellow;}
+    </style>
+</head>
+<body>
+
+    <table border="1" align="center">
+        <tr>
+            <td colspan="2" align="center">
+                <h3>İş Başvuru Formu</h3>    
+            </td>
+        </tr>
+        <tr>
+            <td><label for="adi">Adı</label></td>
+            <td> <input type="text" name="adi" id="adi" placeholder="Adınızı giriniz">
+            </td>
+        </tr>
+        <tr>
+            <td> <label for="soyadi">Soyadı</label></td>
+            <td><input type="text" name="soyadi" id="soyadi"></td>
+        </tr>
+        <tr>
+            <td><label for="cinsiyet">Cinsiyet</label></td>
+            <td>
+                <input type="radio" name="cinsiyet"  id="erkek">  Erkek
+                 <input type="radio" name="cinsiyet" checked id="kadin">Kadın
+            </td>
+        </tr>
+        <tr>
+            <td>    <label for="renksec">Renk seçiniz</label></td>
+            <td>
+                <input type="color" name="renksec" id=""></td>
+        </tr>
+        <tr>
+            <td><label for="dogumtarihi">Doğum Tarihi</label></td>
+            <td><input type="date" name="dogumtarihi" id=""></td>
+        </tr>
+        <tr>
+            <td><label for="dyeri">Doğum Yeri</label></td>
+            <td>
+                <select name="dyeri" id="dyeri">
+                    <option value="istanbul">İstanbul</option>
+                    <option value="izmir" selected>İzmir</option>
+                    <option value="ankara">Ankara</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="dosya">Dosya Yükle</label></td>
+            <td><input type="file" name="dosya" id="dosya"></td>
+        </tr>
+        <tr>
+            <td><label for="maas">Beklediğiniz Maaş</label></td>
+            <td><input type="number" name="maas" id="maas"></td>
+        </tr>
+        <tr>
+            <td><label for="">Maaş beklentiniz</label></td>
+            <td><input type="range" name="maasdeger" id="maasdeger" min="30000"  max="50000"></td>
+        </tr>
+        <tr>
+            <td>Kısa Özgeçmişiniz</td>
+            <td>
+                <textarea name="ozgecmis" id="" cols="30" rows="3">
+                </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button>Kaydet</button>
+            </td>
+        </tr>
+
+    </table>
+    
+
+
+</body>
+</html>
