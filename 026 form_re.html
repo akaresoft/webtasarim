@@ -89,14 +89,16 @@
         const sifre = document.getElementById("sifre").value;
         const tsifre = document.getElementById("tsifre").value;
         const onay = document.getElementById("onay").checked;
+        const adres = document.getElementById("adres").value;
 
-    //Hatalar
-    const adiError = document.getElementById("adi-error");
-    const soyadiError = document.getElementById("soyadi-error");
-    const epostaError = document.getElementById( "eposta-error");
-    const sifreError = document.getElementById("sifre-error");
-    const tsifreError = document.getElementById("tsifre-error"  );
-    const onayError = document.getElementById("onay-error");
+        //Hatalar
+        const adiError = document.getElementById("adi-error");
+        const soyadiError = document.getElementById("soyadi-error");
+        const epostaError = document.getElementById( "eposta-error");
+        const sifreError = document.getElementById("sifre-error");
+        const tsifreError = document.getElementById("tsifre-error"  );
+        const onayError = document.getElementById("onay-error");
+        const adresError = document.getElementById("adres-error");
 
     adiError.textContent = "";
     soyadiError.textContent = "";
@@ -104,6 +106,7 @@
     tsifreError.textContent="";
     epostaError.textContent="";
     onayError.textContent="";
+    adresError.textContent="";
 
     let isValid = true; // Varsayılan olarak Geçerli
 
@@ -141,6 +144,12 @@
     if (!onay) {
         onayError.textContent =
             "Lütfen onay kutusunu işaretleyiniz.";
+        isValid = false;
+    }
+
+    if (adres === "" || /\d/.test(adres)) {
+        adresError.textContent =
+            "Lütfen adres alanını kurallara göre doldurunuz.";
         isValid = false;
     }
 
@@ -215,6 +224,7 @@
         <td>Adres</td>
         <td>
             <textarea name="adres" id="adres" cols="30" rows="5"></textarea>
+            <span id="adres-error" class="error-message"></span>
         </td>
     </tr>
 
