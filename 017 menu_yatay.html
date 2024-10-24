@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu{
+        /*    background-color: orangered; /* zemin rengi */
+            background: linear-gradient(#1597e2, #02025f);
+        
+            color:#FFF; /* Yazı rengi */
+            width: 100%; /* tam ekran genişlik */
+            height: 50px; /* yükseklik */
+            line-height: 30px; /* satır yükseklik */
+            font-family: Verdana; /* kullanılan font tipi */
+            font-weight: bold;  /* koyu font */
+            font-size: 15px; /* font büyüklüğü */
+            margin:0px; /* dış boşluk */
+            text-shadow: 2px 2px #000;
+        }
+        #menu li{ /* menü seçenekleri */
+            display: inline-block; /* yan yana blok şeklinde*/
+            margin-left:10px; /* soldan dış boşluk 10px */
+            padding:10px; /* iç boşluk her yönden 10px */
+            cursor: pointer; /* fareyi el işareti */
+        }
+        #menu a { /* linkleri biçimlendirme */
+            color:#FFF; /* yazı rengi normal */
+            text-decoration: none; /* link altındaki çizgiyi kaldırır */
+        }
+        #menu li:hover{ /* fare ile üzerine gelince */
+            
+            background:  #02025f;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li> <a href="index.html">Ana Sayfa</a>  </li>
+        <li> <a href="hakkimizda.html"> Hakkımızda</a> </li>
+        <li> <a href="urunler.html">Ürünler</a>   </li>
+        <li> <a href="iletisim.html">İletişim</a>   </li>
+    </ul>
+</body>
+</html>

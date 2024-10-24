@@ -1,0 +1,22 @@
+
+        h1{
+            font-size:45px;
+            color:blue;
+        }
+
+        h2{
+            color:red; /* yazı rengi */
+            background-color: #CCCCCC;
+        }
+        
+        body{
+            font-family: sans-serif; /* font tipi */
+            font-size: 15px; /* font büyüklüğü*/
+            font-weight: bold; /* font kalınlığı */
+        }
+
+        p{
+            font-size:15px;
+            font-family: Verdana;
+        }
+

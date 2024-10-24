@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression(Düzenli İfadeler)</title>
+    <style>
+        body {
+            font-family: Verdana;
+            font-size:16px;
+            background-color: #ccc;
+        }
+        h1 {
+            text-align: center;
+            color: #505050;
+            font-size:22px;
+        }
+        form {
+            max-width: 550px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size:17px;
+         
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            background-color: #fff;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"],
+        input[type="reset"],
+        input[type="checkbox"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,
+        input[type="checkbox"]:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+    
+<script>
+    function validateForm() {
+        const adi = document.getElementById("adi").value;
+        const soyadi = document.getElementById("soyadi").value;
+        const eposta = document.getElementById("eposta").value;
+        const sifre = document.getElementById("sifre").value;
+        const tsifre = document.getElementById("tsifre").value;
+        const onay = document.getElementById("onay").checked;
+
+    //Hatalar
+    const adiError = document.getElementById("adi-error");
+    const soyadiError = document.getElementById("soyadi-error");
+    const epostaError = document.getElementById( "eposta-error");
+    const sifreError = document.getElementById("sifre-error");
+    const tsifreError = document.getElementById("tsifre-error"  );
+    const onayError = document.getElementById("onay-error");
+
+    adiError.textContent = "";
+    soyadiError.textContent = "";
+    sifreError.textContent="";
+    tsifreError.textContent="";
+    epostaError.textContent="";
+    onayError.textContent="";
+
+    let isValid = true; // Varsayılan olarak Geçerli
+
+    if (adi === "" || /\d/.test(adi)) {
+        adiError.textContent =
+            "Lütfen adı alanını kurallara göre doldurunuz.";
+        isValid = false;
+    }
+
+    if (soyadi === "" || /\d/.test(soyadi)) {
+        soyadiError.textContent =
+            "Lütfen soyadı alanını kurallara göre doldurunuz.";
+        isValid = false;
+    }
+
+
+    if (eposta === "" || !eposta.includes("@")) {
+        epostaError.textContent =
+            "Lütfen e-posta alanını kurallara göre doldurunuz.";
+        isValid = false;
+    }
+
+    if (sifre === "" || sifre.length < 6) {
+        sifreError.textContent ="Lütfen şifreyi en az 6 karakter giriniz.";
+        isValid = false;
+    }
+
+    if (sifre!=tsifre){
+
+        tsifreError.textContent="Şifreler uyuşmuyor. "
+        isValid=false;
+    }
+
+
+    if (!onay) {
+        onayError.textContent =
+            "Lütfen onay kutusunu işaretleyiniz.";
+        isValid = false;
+    }
+
+    return isValid;
+}
+</script>
+</head>
+<body>
+ 
+
+    <form name="kayitFormu" onsubmit="return validateForm()">
+
+<table align="center" border="0">
+    <tr>
+        <td colspan="2">
+            <h1>  E-Ticaret Üye Kayıt</h1>
+          
+        </td>
+    </tr>
+    <tr>
+        <td>Adı</td>
+        <td>
+            <input type="text" name="adi" id="adi"  minlength="2" maxlength="10">
+            <span id="adi-error" class="error-message"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Soyadı:</td>
+        <td>
+            <input type="text" name="soyadi" id="soyadi"  minlength="2" maxlength="10">
+            <span id="soyadi-error" class="error-message"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>E-posta:</td>
+        <td> <!-- pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  -->
+            <input type="email" name="eposta" id="eposta" >
+            <span id="eposta-error" class="error-message"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Şifre:</td> 
+        <td><!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" -->
+            <input type="text" name="sifre" id="sifre"  >
+            <span id="sifre-error" class="error-message"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Tekrar Şifre:</td> <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" -->
+        <td><input type="text" name="tsifre" id="tsifre"  >
+            <span id="tsifre-error" class="error-message"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Cinsiyet</td>
+        <td>
+            <input type="radio" name="cinsiyet" id="erkek">Erkek 
+            <input type="radio" name="cinsiyet" id="kadin">Kadın 
+        </td>
+    </tr>
+    <tr>
+        <td>Doğum Yeri</td>
+        <td>
+            <select name="dyeri" id="dyeri">
+                <option value="ankara">Ankara</option>
+                <option value="istanbul" selected>İstanbul</option>
+                <option value="izmir">İzmir</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Adres</td>
+        <td>
+            <textarea name="adres" id="adres" cols="30" rows="5"></textarea>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            <input type="checkbox" name="onay" id="onay"> Bilgilerin doğruluğunu kabul ediyorum. <br>
+            <span id="onay-error" class="error-message"></span>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <input type="reset" value="Temizle">
+            <input type="submit" value="Kaydet">
+           
+        </td>
+    </tr>
+
+
+</table>
+    </form>
+
+</body>
+</html>
