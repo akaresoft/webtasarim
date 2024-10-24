@@ -75,13 +75,23 @@
         }
 
         .error-message {
-            color: red;
+            color: rgb(249, 249, 249);
             font-size: 14px;
             margin-top: 5px;
         }
     </style>
     
 <script>
+
+
+    /*document.getElementById("adi").addEventListener("keypress", function(event) {
+                if (event.keyCode == 13) {
+                    document.getElementById("soyadi").focus();
+                   // document.getElementById("soyadi").style.background='yellow';
+                }
+            });*/
+
+
     function validateForm() {
         const adi = document.getElementById("adi").value;
         const soyadi = document.getElementById("soyadi").value;
@@ -90,6 +100,7 @@
         const tsifre = document.getElementById("tsifre").value;
         const onay = document.getElementById("onay").checked;
         const adres = document.getElementById("adres").value;
+        const telefon = document.getElementById("telefon").value;
 
         //Hatalar
         const adiError = document.getElementById("adi-error");
@@ -99,6 +110,7 @@
         const tsifreError = document.getElementById("tsifre-error"  );
         const onayError = document.getElementById("onay-error");
         const adresError = document.getElementById("adres-error");
+        const telefonError = document.getElementById("telefon-error");
 
     adiError.textContent = "";
     soyadiError.textContent = "";
@@ -107,6 +119,7 @@
     epostaError.textContent="";
     onayError.textContent="";
     adresError.textContent="";
+    telefonError.textContent="";
 
     let isValid = true; // Varsayılan olarak Geçerli
 
@@ -134,6 +147,11 @@
         isValid = false;
     }
 
+    if (telefon === "" || telefon.length < 12) {
+        telefonError.textContent ="Lütfen telefonu en az 11 karakter giriniz.";
+        isValid = false;
+    }
+
     if (sifre!=tsifre){
 
         tsifreError.textContent="Şifreler uyuşmuyor. "
@@ -153,8 +171,14 @@
         isValid = false;
     }
 
+
     return isValid;
 }
+
+
+
+
+
 </script>
 </head>
 <body>
@@ -193,14 +217,21 @@
     <tr>
         <td>Şifre:</td> 
         <td><!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" -->
-            <input type="text" name="sifre" id="sifre"  >
+            <input type="password" name="sifre" id="sifre"  >
             <span id="sifre-error" class="error-message"></span>
         </td>
     </tr>
     <tr>
         <td>Tekrar Şifre:</td> <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" -->
-        <td><input type="text" name="tsifre" id="tsifre"  >
+        <td><input type="password" name="tsifre" id="tsifre"  >
             <span id="tsifre-error" class="error-message"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Telefon</td>
+        <td> 
+            <input type="text" name="telefon" id="telefon" placeholder="545-333-22-11" >
+            <span id="telefon-error" class="error-message"></span>
         </td>
     </tr>
     <tr>
@@ -244,6 +275,19 @@
 
 
 </table>
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+    const input = document.querySelector("#telefon");
+        input.addEventListener('input', (e) => {
+            if (e.target.value)
+            {
+                const x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+                e.target.value =  + x[1] + (x[2] ? `-${x[2]}` : '') + (x[3] ? `-${x[3]}` : '')+ (x[4] ? `-${x[4]}` : '')
+            }
+        });
+    });
+
+</script>
     </form>
 
 </body>
