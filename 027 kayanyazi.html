@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayan yazı</title>
+</head>
+<body>
+<!-- Behaviour davranış: alternate, scroll, slide -->    
+<!-- Direction Yönü: Left, Right, Up, Down -->   
+<!-- loop parametresi -1 ise sürekli döner -->
+<marquee>Sağdan sola kayan yazı</marquee>
+
+<marquee behavior="alternate" direction="up" width="200" height="100"
+style="background-color: blue; color:white">
+    Bu yazı ekranda kayacak. Haberler vs. bu şekilde hazırlanabilir
+</marquee>
+
+<marquee
+  direction="down"
+  width="250"
+  height="200"
+  behavior="alternate"
+  style="border:solid">
+  <marquee behavior="alternate">Bu çerçeve içinde çalışan kayan yazı</marquee>
+</marquee>
+
+
+<!-- Kayan Resim  -->
+<marquee behavior="alternate" direction="right" 
+    onmouseover="stop()" onmouseout="start()">
+    <img src="images/2.jpeg" height="100" alt="Atatürk">
+    <img src="images/1.jpeg" height="100" alt="Atatürk">
+    <img src="images/3.jpeg" height="100" alt="Atatürk">
+      <p>29 Ekim Cumhuriyet Bayramı Kutlu olsun</p>
+    </marquee>
+</body>
+</html>
