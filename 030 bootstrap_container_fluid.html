@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Container fluid</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+         .kirmizi{background-color: red; color:white}
+        .yesil{background-color: green; color:white}
+        .sari{background-color: yellow; color:black}
+        .mavi{background-color: blue; color:white}
+        .mor{background-color: blueviolet; color:white}
+        .turuncu{background-color: orange; color:white}
+        .yukseklik-100{height: 100px;}
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid"><!-- tam ekrana yayılan container-->
+    <!-- col sınıfı ile eşit şekilde sütunlara böleriz -->
+            <!-- row başlangıç-->
+            <div class="row"> 
+                <div class="col mavi yukseklik-100"> 1.sütun</div>
+                <div class="col yesil yukseklik-100">2.sütun</div>
+            </div><!-- row bitiş-->
+            
+             <!-- row başlangıç-->
+            <div class="row">
+                <div class="col-md-6 mor"> 6 parça</div>
+                <div class="col-md-4 turuncu"> 4 parça</div>
+                <div class="col-md-2 sari"> 2 parça </div>
+            </div><!-- row bitiş -->
+    </div><!--container bitiş-->
+    
+</body>
+</html>
