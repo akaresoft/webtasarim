@@ -10,55 +10,150 @@
 </head>
 <body>
 
-    <div class="container">
-        <div class="row col-md-12">
+     <div class="container-fluid">
+        <div class="row">
+                <div class="col-md-6">
+                    <!-- SLAYT 1 BAŞLA-->
 
-            <!-- Slayt başlangıç-->
+                    <div id="slaytIstanbul" class="carousel slide">
+                        <!-- indikatör(slayt altı çizgi butonlar) başlangıç-->
+                        <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#slaytIstanbul" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#slaytIstanbul" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#slaytIstanbul" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#slaytIstanbul" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#slaytIstanbul" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        </div>
+                        <!-- indikatör bitiş -->
+                        <div class="carousel-inner">
+                        <!-- 1. resim -->
+                        <div class="carousel-item active">
+                            <img src="images/resim1.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            <h5>İlk Slayt</h5>
+                            <p>Açıklama.</p>
+                            </div>
+                        </div>
+                        <!-- 2. resim -->
+                        <div class="carousel-item">
+                            <img src="images/resim2.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            <h5>İkinci Slayt</h5>
+                            <p>Açıklama.</p>
+                            </div>
+                        </div>
+                        <!-- 3. resim -->
+                        <div class="carousel-item">
+                            <img src="images/resim3.jpg" class="d-block w-100 " alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            <h5>Üçüncü slayt </h5>
+                            <p>Açıklama.</p>
+                            </div>
+                        </div>
+                        <!-- 4. resim -->
+                        <div class="carousel-item">
+                            <img src="images/resim4.jpg" class="d-block w-100 " alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            <h5>Dördüncü slayt </h5>
+                            <p>Açıklama.</p>
+                            </div>
+                        </div>
 
-            <div id="slaytIstanbul" class="carousel slide">
-                <!-- indikatör(slayt altı çizgi butonlar) başlangıç-->
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#slaytIstanbul" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#slaytIstanbul" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#slaytIstanbul" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <!-- indikatör bitiş -->
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="images/resim1.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>İlk Slayt</h5>
-                      <p>Açıklama.</p>
+                        <!-- 5. resim -->
+                        <div class="carousel-item">
+                            <img src="images/resim5.jpg" class="d-block w-100 " alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            <h5>Beşinci slayt </h5>
+                            <p>Açıklama.</p>
+                            </div>
+                        </div>
+
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#slaytIstanbul" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Önceki</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#slaytIstanbul" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Sonraki</span>
+                        </button>
                     </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/resim2.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>İkinci Slayt</h5>
-                      <p>Açıklama.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/resim3.jpg" class="d-block w-100 " alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Üçüncü slayt </h5>
-                      <p>Açıklama.</p>
-                    </div>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#slaytIstanbul" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Önceki</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#slaytIstanbul" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Sonraki</span>
-                </button>
-              </div>
 
-            <!-- Slayt bitiş-->
+                    <!-- SLAYT 1 BİTİŞ-->
+                </div><!-- col-md-6 bitiş -->
 
-        </div><!-- row col-md-6-->
+
+                <div class="col-md-6">
+                    
+                    <!-- SLAYT 2 BAŞLA-->
+                    <div id="slaytIstanbul2" class="carousel slide">
+                        <!-- indikatör(slayt altı çizgi butonlar) başlangıç-->
+                        <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#slaytIstanbul2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#slaytIstanbul2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#slaytIstanbul2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#slaytIstanbul2" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#slaytIstanbul2" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        </div>
+                        <!-- indikatör bitiş -->
+                        <div class="carousel-inner">
+                        <!-- 1. resim -->
+                        <div class="carousel-item active">
+                            <img src="images/resim1.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            <h5>İlk Slayt</h5>
+                            <p>Açıklama.</p>
+                            </div>
+                        </div>
+                        <!-- 2. resim -->
+                        <div class="carousel-item">
+                            <img src="images/resim2.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            <h5>İkinci Slayt</h5>
+                            <p>Açıklama.</p>
+                            </div>
+                        </div>
+                        <!-- 3. resim -->
+                        <div class="carousel-item">
+                            <img src="images/resim3.jpg" class="d-block w-100 " alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            <h5>Üçüncü slayt </h5>
+                            <p>Açıklama.</p>
+                            </div>
+                        </div>
+                        <!-- 4. resim -->
+                        <div class="carousel-item">
+                            <img src="images/resim4.jpg" class="d-block w-100 " alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            <h5>Dördüncü slayt </h5>
+                            <p>Açıklama.</p>
+                            </div>
+                        </div>
+
+                        <!-- 5. resim -->
+                        <div class="carousel-item">
+                            <img src="images/resim5.jpg" class="d-block w-100 " alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            <h5>Beşinci slayt </h5>
+                            <p>Açıklama.</p>
+                            </div>
+                        </div>
+
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#slaytIstanbul2" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Önceki</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#slaytIstanbul2" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Sonraki</span>
+                        </button>
+                    </div>
+                    <!-- SLAYT 2 BİTİŞ-->
+
+                </div><!-- 6 birim bitiş-->
+
+        </div>  <!-- row bitiş-->
 
     </div>
     <!-- container bitiş-->

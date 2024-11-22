@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Tablo</title>
+    <style>
+        table,th, td{  
+            padding:7px;
+            font-family: Verdana;
+            font-size:17px;
+            width: 50%;
+            border-bottom: 1px solid #ddd;
+           
+            border-collapse:collapse;
+            table-layout: fixed;
+            text-align: center;
+        }
+        tr{
+            height: 20px;
+        }
+ 
+        /* zebra deseni*/
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #5c5a5a;
+            color:#dad8d8;
+        }
+        #yillar{
+            text-align: center;
+        }
+        td{
+            vertical-align: middle; 
+            /*
+               vertical align ile dikeyde ortalama yaparız
+               middle: orta
+               bottom:alt; 
+               top:üst
+            */
+        }
+    </style>
+</head>
+<body>
+
+    <table align="center">
+        <tr align="center">
+            <td bgcolor="lightblue">Yıllar</td>
+            <td bgcolor="orange">Ocak</td>
+            <td bgcolor="yellow">Şubat</td>
+        </tr>
+        <tr>
+            <td id="yillar">2022</td>
+            <td>200</td>
+            <td>250</td>
+        </tr>
+        <tr>
+            <td id="yillar">2023</td>
+            <td>150</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td id="yillar">2024</td>
+            <td>200</td>
+            <td>250</td>
+        </tr>
+        
+
+
+
+    </table>
+    
+</body>
+</html>

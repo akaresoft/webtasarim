@@ -1,0 +1,301 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekrana Duyarlı Menü </title>
+    <link  rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.1/css/all.css">
+    <style>
+    /* google Poppins fontunu dahil ediyoruz */
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"); 
+     /* CSS değişken oluşturma */
+    :root{
+        --white: #f9f9f9; /* --white değişkeni, CSS değişkenler -- ile başlar */
+        --black: #36383F;
+        --gray: #85888C;
+        --mavi: rgb(7, 7, 121);
+        --acikmavi:rgb(26, 93, 218) ;
+        --turuncu: rgb(255, 111, 0);
+    }
+
+    /* Reset (Sıfırlama) */
+    *{
+        margin: 0; padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        background-color: var(--white); /* Değişken kullanımı, daha önce tanımlanan --white değişkeni kullanılıyor*/
+        font-family: "Poppins", sans-serif;
+    }
+    
+    a{ text-decoration: none;}
+
+    ul{
+        list-style: none; /* Listelerde nokta görünmesin */
+    }
+    .header{
+       /* background-color: var(--black);*/
+        background-image: linear-gradient(var(--mavi), var(--acikmavi)); 
+        box-shadow: 1px 1px 5px 0px var(--gray);
+        position: sticky;
+        top: 0;
+        width: 100%;
+    }
+    .logo{
+        display: inline-block;
+        color: var(--white);
+        font-size: 60px;
+        margin-left: 10px;
+    }
+    .nav{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: var(--black);
+        overflow: hidden;
+
+    }
+    .menu{
+        /* linear-gradient ile Renk geçişi */
+        background-image: linear-gradient(var(--mavi), var(--acikmavi)); 
+        /* Gölge */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow with blur effect */
+    }
+
+
+    .menu a{
+        display: block;
+        padding: 30px;
+        color: var(--white);
+    }
+    /* Fare menu class gelince */
+    /* Üzerine gelince rengi değiştirme */
+    .menu a:hover {
+        background-color: var(--turuncu);
+        color: var(--hover-color); /* Change to your desired hover color */
+        text-decoration: underline;
+        transform: scale(1.2); /* Yazı büyüklüğünü %20 artıralım */
+    }
+
+
+    .menu a {
+        opacity: 1; /* Set initial opacity */
+        transition: opacity 0.3s ease; /* Add transition for smooth effect */
+    }
+    .menu a:hover {
+        opacity: 1; /* Change to full opacity on hover */
+    }
+/**/
+    .nav{
+        max-height: 0;
+        transition: max-height .5s ease-out; /* Kayarak açılan animasyon sağlar */
+    }
+    /* Hamburger menu başlangıç*/
+    /* Menu Icon */
+    .hamb{
+        cursor: pointer; /* Fareyi el simgesine */
+        float: right;
+        padding: 40px 20px;
+    }
+
+    .hamb-line {
+        background: var(--white);
+        display: block;
+        height: 2px;
+        position: relative;
+        width: 24px;
+    } /* Style span tag */
+
+    .hamb-line::before,
+    .hamb-line::after{
+        background: var(--white);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+       /* transition: all .2s ease-out;*/
+        width: 100%;
+    }
+    .hamb-line::before{
+        top: 5px;
+    }
+    .hamb-line::after{
+        top: -5px;
+    }
+
+    /* Hamburger bitiş*/
+        /* Toggle menu icon */
+    .side-menu:checked ~ nav{
+        max-height: 100%;
+    }
+    .side-menu:checked ~ .hamb .hamb-line {
+        background: transparent;
+    }
+    .side-menu:checked ~ .hamb .hamb-line::before {
+        transform: rotate(-45deg);
+        top:0;
+    }
+    .side-menu:checked ~ .hamb .hamb-line::after {
+        transform: rotate(45deg);
+        top:0;
+    }
+
+    body:has(.side-menu:checked) {
+        overflow: hidden;
+    }
+    /* Alt menü (Sub-menu)*/
+    .subnav-content {
+            background-color:  var(--white);
+            width: 100%;
+            z-index: 1;
+            padding: 20px 0 ;
+            display: none;
+    }
+    .subnav-content a {
+            color: var(--black);
+            text-decoration: none;
+            padding: 0;
+            margin: 10px 0;
+            text-align: center;
+        }
+    .subnav:hover .subnav-content {
+        display: block;
+    }
+
+    /* Alt menü bitiş*/
+
+    /* Büyük ekranda görünecek menü seçenekleri */
+    /* Responsiveness */
+    @media (min-width: 768px) {
+        .nav{
+            max-height: none;
+            top: 0;
+            position: relative;
+            float: right;
+            width: fit-content;
+            background-color: transparent;
+        }
+        .menu li{
+            float: left;
+        }
+        .menu a:hover{
+            background-color: transparent;
+            color: var(--gray);
+
+        }
+
+        .hamb{
+            display: none;
+        }
+        .subnav-content {
+            padding: 20px 0 ;
+            display: none;
+            background-color:  var(--black);
+        }
+        .subnav-content a {
+            color: white;
+        }
+        .subnav-content li {
+            display: block;
+            width: 100%;
+            background-color: var(--black);
+        }
+        .subnavbtn:focus+.subnav-content {
+            display: block;
+        }
+        .subnav:hover .subnav-content {
+            display: block;
+        }
+        .subnav:focus-within .subnav-content {
+            display: block;
+        }
+        .subnav-content a:focus {
+            background-color: var(--white);
+            color: var(--black);
+        }
+
+        .subnav-content li {
+            display: block;
+            width: 100%;
+            background-color: var(--black);
+        }
+        .subnavbtn:focus+.subnav-content {
+            display: block;
+        }
+        .subnav:hover .subnav-content {
+            display: block;
+        }
+        .subnav:focus-within .subnav-content {
+            display: block;
+        }
+        .subnav-content a:focus {
+            background-color: var(--white);
+            color: var(--black);
+        }
+    } /* media  768px */
+
+    /* Define the slide animation */
+    @keyframes slideIn {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Apply the animation to the menu items */
+    .side-menu:checked~nav .menu a {
+        animation: slideIn 0.5s forwards;
+    }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="header" role="banner">
+        <a href="#" class="logo">ABCSoft</a>
+     
+        <input class="side-menu" type="checkbox" id="side-menu"/>
+           <!-- Hamburger ikon başlangıç -->
+        <label class="hamb" for="side-menu" aria-label="Menu">
+            <span class="hamb-line"></span>
+        </label>
+        <!-- Menu -->
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="#anasayfa">Ana Sayfa</a></li>
+                <li><a href="#hakkimizda">Hakkımızda</a> </li>
+                <!-- İletişim alt menüsü-->
+                  <li aria-haspopup="true">
+                    <div class="subnav">
+                      <a href="#" class="subnavbtn" aria-label="Contact" aria-controls="contact-submenu"
+                        tabindex="0">İletişim <i class="fa fa-caret-down"></i></a>
+                      <ul class="subnav-content" role="menu" id="contact-submenu">
+                        <li><a href="#" role="menuitem">Email</a></li>
+                        <li><a href="#" role="menuitem">Twitter</a></li>
+                        <li><a href="#" role="menuitem">Phone</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!-- iletişim alt menüsü-->
+            </ul>
+        </nav>
+    </header>
+  
+    <!-- ana içerik content -->
+    <main>
+        <article>
+            <h1>
+               Başlık
+            </h1>
+            <p>
+                İçerik
+            </p>
+        </article>
+    </main>
+</body>
+</html>
