@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar</title>
+   <!-- fontlar-->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Awesome Kütüphaneleri -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
         body{
@@ -33,7 +36,7 @@
         .nav-link{
             padding: 1.1rem 0rem;
         }
-        /* Açılır menü */
+        /* Drop down Açılır menü */
         .dropdown-menu{
             background: #0b47c9;
             color:#FFF;
@@ -137,12 +140,80 @@
             border-color: rgb(255,102,203);
             } 
 
+        .saga-hizala{
+            float: right;
+        }
+        .kategoriler{
+            display: block;
+            margin-left:0px;
+            padding-left: 0px;
+            list-style-type: none ;
+            margin-top:10px;
+            margin-left:15px;
+        }
+
+        .kategoriler li{
+            background-color: #1772e8;
+            color:#FFF;
+           list-style-type: none ;
+           padding: 5px 0px 2px 15px;
+
+        }
+        .kategoriler li:hover{
+            background-color: #d20000;
+            color:#FFF;
+        }
+
+        .title-box{
+            background: linear-gradient(#d91c1c, #620202);
+          
+            width: -moz-calc(100% - 10px);
+            width: -webkit-calc(100% - 10px);
+            width: calc(100% - 10px);
+            display:inline-block;
+
+            color:#FFF;
+            padding: 5px 10px 5px 10px; /*iç boşluk üst-sağ-alt-sol*/
+            margin-top:10px; /* üst mesafe*/
+            margin-bottom: 5px; /* alt mesafe*/
+            margin-left:15px;
+            font-size:15px;
+            
+            border-radius: 5px; /* Köşeleri yuvarlatma*/
+            box-shadow: 5px 5px rgb(80, 79, 79); /* Gölge ekliyoruz*/
+            text-shadow: 1px 1px #212121;
+        }
+
+        .summary-post{
+            font-size:13px;
+            display: block;
+            overflow-y: hidden; /* taşma varsa gizle*/
+            text-overflow: ellipsis; /* yazı taşarsa üç nokta koy*/
+            height: 49px;
+           /* text-align: justify;*/
+            /*max-width: 60%;*/
+            word-wrap: true; /* kelime kaydırma yapılsın mı*/
+        }
+        .summary-image{
+            border:2px solid #595858be;
+            float:left;
+           
+            width: 50px;
+            height: 50px;
+            transition: background-image 0.3s ease-in-out;
+        }
+
+        .summary-image:hover{
+            border:2px solid #eee;
+        }
+
     </style>
 
 </head>
 <body>
     
-    <div class="container-fluid"><!--container başla-->
+    <!-- banner tasarım -->
+    <div class="container-fluid"><!--container fluid başla-->
         <div class="row">
             <div class="col-md-3 logo-header">
                 Oğuzhan Taş.com 
@@ -157,34 +228,38 @@
                 <a href="#" class="fa fa-instagram sosyal-icon"></a>
                 <a href="#" class="fa fa-whatsapp sosyal-icon"></a>
             </div>
-        </div>
+        </div><!-- row bitiş-->
         
-    </div>
+    </div><!-- container-fluid bitiş -->
 
+    <!-- navbar Gezinti çubuğu-->
     <nav class="navbar navbar-expand-lg navrenk">
    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary ">-->
         <div class="container">    
           <img src="images/logo.JPG" class="navbar-brand" width="30">
        
+         <!-- Küçük ekranlarda hamburger ikon -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
                 <span class="navbar-toggler-icon">   
                 </span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- menü seçenekleri başlangıç-->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="#">Ana Sayfa</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#">Hakkımda</a>
+                <a class="nav-link " href="hakkimda.html">Hakkımda</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">Kitap Yorumları</a>
+                <a class="nav-link active" href="kitapyorumlari.html">Kitap Yorumları</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Sunumlar</a>
+                <a class="nav-link" href="sunumlar.html">Sunumlar</a>
               </li>
+              <!-- Drop down list başlangıç -->
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                  Kategoriler
@@ -195,23 +270,25 @@
                   <li><a class="dropdown-item" href="#">PHP</a></li>
                 </ul>
               </li>
+              <!-- Drop down list bitiş-->
               <li class="nav-item">
                 <a class="nav-link" href="#">İletisim</a>
               </li>
              
              
-            </ul>
+            </ul><!-- menü seçenekleri bitiş-->
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Arama" aria-label="Arama">
               <button class="btn acikmavi" type="submit">Ara</button>
             </form>
           </div>
         </div>
-      </nav>
+    </nav> <!-- navbar bitiş -->
 
 
       <div class="container">
         <div class="row">
+            <!-- Makale Özetleri-->
             <div class="col-md-9 siyah y100"> 
                 <div class="row">
                     <div class="col-md-2 kirmizi">14.08.2024</div>
@@ -262,10 +339,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 gri y100"> 
-                Kategoriler
-                <hr>
-                <ul>
+            <!-- Kategoriler -->
+            <div class="col-md-3 y100 mt-2"> 
+                <span class="title-box">Kategoriler</span>
+                <ul class="kategoriler">
                     <li>PHP</li>
                     <li>C#</li>
                     <li>Asp.net</li>
@@ -276,11 +353,92 @@
                     <li>SQL Server</li>
                 </ul>
 
+                <!-- En Çok Okunanlar -->
+                <span class="title-box">En Çok Okunanlar</span>
+                <!-- 1. satır -->
+                <div class="row yesil mx-3 my-2">
+                    <div class="col-md-3">
+                        <img src="images/bashscript.jpg" class="summary-image">
+                    </div>
+                    <div class="col-md-9 mavi summary-post">Bu yazımızda Bashcript ile Linux üzerinde toplu işlem dosyası çalıştırma işlemini öğreneceğiz toplu işlem dosyası çalıştırma işlemini öğreneceğiz</div>
+                </div>
+
+                <!-- 2. satır -->
+                <div class="row yesil mx-3 my-2">
+                    <div class="col-md-3">
+                        <img src="images/bashscript.jpg" class="summary-image">
+                    </div>
+                    <div class="col-md-9 mavi summary-post">Bu yazımızda Bashcript ile Linux üzerinde...</div>
+                </div>
+                <!-- 3. satır -->
+                <div class="row yesil mx-3 my-2">
+                    <div class="col-md-3">
+                        <img src="images/bashscript.jpg" class="summary-image">
+                    </div>
+                    <div class="col-md-9 mavi summary-post">Bu yazımızda Bashcript ile Linux üzerinde...</div>
+                </div>
+
+                <!-- Yeni Makaleler -->
+                <span class="title-box">Yeni Makaleler</span>
+                <!-- 1. satır -->
+                <div class="row yesil mx-3 my-2">
+                    <div class="col-md-3">
+                        <img src="images/bashscript.jpg" class="summary-image">
+                    </div>
+                    <div class="col-md-9 mavi summary-post">Bu yazımızda Bashcript ile Linux üzerinde...</div>
+                </div>
+
+                <!-- 2. satır -->
+                <div class="row yesil mx-3 my-2">
+                    <div class="col-md-3">
+                        <img src="images/bashscript.jpg" class="summary-image">
+                    </div>
+                    <div class="col-md-9 mavi summary-post">Bu yazımızda Bashcript ile Linux üzerinde...</div>
+                </div>
+                <!-- 3. satır -->
+                <div class="row yesil mx-3 my-2">
+                    <div class="col-md-3">
+                        <img src="images/bashscript.jpg" class="summary-image" >
+                    </div>
+                    <div class="col-md-9 mavi summary-post">Bu yazımızda Bashcript ile Linux üzerinde...</div>
+                </div>
             </div>
         </div>
 
-      </div>
+      </div><!-- container-sol taraf bitiş-->
 
+      <!-- pagination sayfalama -->
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12 turuncu mt-2 pt-3 ">
+
+    
+            <nav aria-label="...">
+                <ul class="pagination saga-hizala">
+                <li class="page-item disabled"><!-- önceki pasif durumda-->
+                    <span class="page-link">Önceki</span>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active"> <!-- aktif olan sayfa-->
+                    <span class="page-link">
+                    2
+                    <span class="sr-only">(current)</span>
+                    </span>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Sonraki</a>
+                </li>
+                </ul>
+            </nav>
+        </div>
+        </div>
+        </div>
+      <!-- pagination bitiş-->
+
+    <!-- footer Alt Kısım -->
     <div class="container-fluid siyah y300">
             <div class="row">
                 <div class="col-md-3 gri y300 p-4">
@@ -325,6 +483,7 @@
         
 
     </div>
+    <!-- footer bitiş-->
 
 </body>
 </html>
