@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <!-- fontlar-->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Awesome Kütüphaneleri -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* (Mevcut CSS kodlarınızı buraya yapıştırın) */
+        body{
+            background-color: gray;
+        }
+        .navrenk{
+            background: linear-gradient(#1597e2, #02025f);
+            color:#FFF;
+        }
+        .navrenk a{
+            color:#ebebeb;
+        }
+        .navrenk a:hover{
+            background: #07369b;
+            color: #FFF;
+            border-radius: 20px;
+        }
+
+        .navbar-nav .nav-link.active { 
+            color: #e3d324; 
+        }
+
+        .nav-link{
+            padding: 1.1rem 0rem;
+        }
+        /* Drop down Açılır menü */
+        .dropdown-menu{
+            background: #0b47c9;
+            color:#FFF;
+        }
+        .dropdown-menu .dropdown-item{
+            background: #0b47c9;
+            color:#FFF;
+        }
+        .acikmavi{
+            background-color: #1772e8;
+            color:#fff;
+        }
+        .navbar-toggler-icon{
+            color:#FFF;
+        }
+    
+        /* LOGO SOL*/
+        .logo-header{
+            height: 80px;
+            background-color: rgb(95, 94, 92);
+            /*font-family: "Dancing Script", cursive;*/
+
+            font-family: "Great Vibes", cursive;
+            font-weight: 700;
+            font-size:50px;
+        }
+        /* Sosyal Medya */
+        .sosyal-medya{
+            height: 80px;
+            background-color:rgb(81, 79, 79);
+        }
+        .sosyal-icon{
+            width: 50px;
+            height: 50px;
+            font-size:30px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50%;
+            color:#FFF;
+            padding:10px;
+            margin-top:10px;
+        }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+
+        }
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        } 
+        .fa-linkedin {
+            background: #0A66C2;
+            color: white;
+        } 
+
+        .fa-youtube{
+            background-color: red;
+            color:white;
+        }
+
+       .fa-instagram{
+
+        background: #f09433; 
+        background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+        background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+        background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+       }
+       .fa-whatsapp  {
+            color:#fff;
+            background:
+            linear-gradient(#25d366,#25d366) 14% 84%/16% 16% no-repeat,
+            radial-gradient(#25d366 60%,transparent 0);
+            } 
+       .fa:hover{
+            box-shadow: 3px 3px #404040;
+        }
+
+
+        .kirmizi{background-color: red; color:white}
+        .yesil{background-color: green; color:white}
+        .sari{background-color: yellow; color:black}
+        .mavi{background-color: blue; color:white}
+        .mor{background-color: blueviolet; color:white}
+        .turuncu{background-color: orange; color:white}
+        .pembe{background-color: pink; color:white}
+        .siyah{background-color: #373737;color:#FFF;}
+        .gri{background-color: #747272; color:#FFF;}
+        .y30{height: 30px;}
+        .y50{height: 50px;}
+        .y100 {min-height: 100px;}
+        .y200{min-height: 200px;}
+        .y300{min-height: 300px;}
+        .custom-toggler .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+            }
+
+            .custom-toggler.navbar-toggler {
+            border-color: rgb(255,102,203);
+            } 
+
+        .saga-hizala{
+            float: right;
+        }
+        .kategoriler{
+            display: block;
+            margin-left:0px;
+            padding-left: 0px;
+            list-style-type: none ;
+            margin-top:10px;
+            margin-left:15px;
+        }
+
+        .kategoriler li{
+            background-color: #1772e8;
+            color:#FFF;
+           list-style-type: none ;
+           padding: 5px 0px 2px 15px;
+
+        }
+        .kategoriler li:hover{
+            background-color: #d20000;
+            color:#FFF;
+        }
+
+        .title-box{
+            background: linear-gradient(#d91c1c, #620202);
+          
+            width: -moz-calc(100% - 10px);
+            width: -webkit-calc(100% - 10px);
+            width: calc(100% - 10px);
+            display:inline-block;
+
+            color:#FFF;
+            padding: 5px 10px 5px 10px; /*iç boşluk üst-sağ-alt-sol*/
+            margin-top:10px; /* üst mesafe*/
+            margin-bottom: 5px; /* alt mesafe*/
+            margin-left:15px;
+            font-size:15px;
+            
+            border-radius: 5px; /* Köşeleri yuvarlatma*/
+            box-shadow: 5px 5px rgb(80, 79, 79); /* Gölge ekliyoruz*/
+            text-shadow: 1px 1px #212121;
+        }
+
+        .summary-post{
+            font-size:13px;
+            display: block;
+            overflow-y: hidden; /* taşma varsa gizle*/
+            text-overflow: ellipsis; /* yazı taşarsa üç nokta koy*/
+            height: 49px;
+           /* text-align: justify;*/
+            /*max-width: 60%;*/
+            word-wrap: true; /* kelime kaydırma yapılsın mı*/
+        }
+        .summary-image{
+            border:2px solid #595858be;
+            float:left;
+           
+            width: 50px;
+            height: 50px;
+            transition: background-image 0.3s ease-in-out;
+        }
+
+        .summary-image:hover{
+            border:2px solid #eee;
+        }/* Carousel indicator container */
+        /* Carousel indicator container */
+        .carousel-indicators-custom {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;  /* Sayıları ön plana getirebilir */
+        }
+
+        /* Carousel indicator numbers (sayılara stil) */
+        .carousel-indicators-custom span {
+            background-color: #ffffff;
+            color: #000;  /* Normalde sayıların rengi siyah */
+            border-radius: 50%;
+            display: inline-block;
+            width: 30px;  /* Sayıların boyutunu ayarlayın */
+            height: 30px;  /* Sayıların boyutunu ayarlayın */
+            text-align: center;
+            line-height: 30px;
+            margin: 0 5px;
+            font-size: 16px;  /* Sayı font boyutunu ayarlayın */
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Hover durumundaki butonlar için stil */
+        .carousel-indicators-custom span:hover {
+            background-color: #007bff; /* Hoverda arka plan mavi */
+            color: white; /* Hoverda yazı rengi beyaz */
+        }
+
+        /* Aktif buton için stil (aktif sayıyı mavi yapacak) */
+        .carousel-indicators-custom span.active {
+            background-color: #007bff;  /* Aktif slide için mavi arka plan */
+            color: white; /* Aktif olduğunda yazı beyaz */
+        }
+
+        /* Alternatif buton düzenlemeleri (butonlar) */
+        .carousel-indicators-custom button {
+            background-color: #fff; /* Normalde buton beyaz */
+            color: #000; /* Normalde yazı rengi siyah */
+            border: 1px solid #000; /* Butonun etrafında siyah bir sınır */
+            padding: 10px; /* Buton boyutlarını ayarlayın */
+            font-size: 16px; /* Buton üzerindeki yazının boyutu */
+            transition: all 0.3s ease; /* Hover geçiş efekti */
+        }
+
+        /* Hover durumunda buton */
+        .carousel-indicators-custom button:hover {
+            background-color: #007bff; /* Hoverda arka plan mavi */
+            color: #fff; /* Hoverda yazı rengi beyaz */
+            border-color: #0056b3; /* Hoverda buton etrafındaki sınır mavi */
+        }
+
+        /* Aktif olan buton */
+        .carousel-indicators-custom button.active {
+            background-color: #007bff; /* Aktif butonun arka planı mavi */
+            color: #fff; /* Aktif butonun yazı rengi beyaz */
+            border-color: #0056b3; /* Aktif butonun etrafındaki sınır mavi */
+        }
+
+
+        /* Diğer CSS stilleri... */
+    </style>
+</head>
+<body>
+    
+    <!-- banner tasarım -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 logo-header">
+                Oğuzhan Taş.com 
+            </div>
+            <div class="col-md-6"></div>
+            <div class="col-md-3 text-end sosyal-medya">
+                <a href="#" class="fa fa-facebook sosyal-icon"></a>
+                <a href="#" class="fa fa-twitter sosyal-icon"></a>
+                <a href="#" class="fa fa-youtube sosyal-icon"></a>
+                <a href="#" class="fa fa-linkedin sosyal-icon"></a>
+                <a href="#" class="fa fa-instagram sosyal-icon"></a>
+                <a href="#" class="fa fa-whatsapp sosyal-icon"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- navbar Gezinti çubuğu-->
+    <nav class="navbar navbar-expand-lg navrenk">
+        <div class="container">    
+            <img src="images/logo.JPG" class="navbar-brand" width="30">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="hakkimda.html">Hakkımda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="kitapyorumlari.html">Kitap Yorumları</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sunumlar.html">Sunumlar</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Kategoriler
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">C# </a></li>
+                            <li><a class="dropdown-item" href="#">SQL Server</a></li>
+                            <li><a class="dropdown-item" href="#">PHP</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">İletisim</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Arama" aria-label="Arama">
+                    <button class="btn acikmavi" type="submit">Ara</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <!-- SLAYT 1 BAŞLA -->
+                <div id="slaytIstanbul1" class="carousel slide">
+                    <!-- indikatör(slayt altı sayılar) başlangıç -->
+                    <div class="carousel-indicators-custom">
+                        <span data-bs-target="#slaytIstanbul1" data-bs-slide-to="0" aria-label="Slide 1">1</span>
+                        <span data-bs-target="#slaytIstanbul1" data-bs-slide-to="1" aria-label="Slide 2">2</span>
+                        <span data-bs-target="#slaytIstanbul1" data-bs-slide-to="2" aria-label="Slide 3">3</span>
+                        <span data-bs-target="#slaytIstanbul1" data-bs-slide-to="3" aria-label="Slide 4">4</span>
+                        <span data-bs-target="#slaytIstanbul1" data-bs-slide-to="4" aria-label="Slide 5">5</span>
+                    </div>
+                    <!-- indikatör bitiş -->
+                    
+                    <div class="carousel-inner">
+                        <!-- 1. resim -->
+                        <div class="carousel-item active">
+                            <img src="images/slayt12345.jpg" class="d-block w-100" alt="..." style="z-index: 0;">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>İlk Slayt</h5>
+                                <p>Açıklama.</p>
+                            </div>
+                        </div>
+                        <!-- 2. resim -->
+                        <div class="carousel-item">
+                            <img src="images/slayt12345.jpg" class="d-block w-100" alt="..." style="z-index: 0;">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>İkinci Slayt</h5>
+                                <p>Açıklama.</p>
+                            </div>
+                        </div>
+                        <!-- 3. resim -->
+                        <div class="carousel-item">
+                            <img src="images/slayt12345.jpg" class="d-block w-100" alt="..." style="z-index: 0;">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Üçüncü Slayt</h5>
+                                <p>Açıklama.</p>
+                            </div>
+                        </div>
+                        <!-- 4. resim -->
+                        <div class="carousel-item">
+                            <img src="images/slayt12345.jpg" class="d-block w-100" alt="..." style="z-index: 0;">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Dördüncü Slayt</h5>
+                                <p>Açıklama.</p>
+                            </div>
+                        </div>
+                        <!-- 5. resim -->
+                        <div class="carousel-item">
+                            <img src="images/slayt12345.jpg" class="d-block w-100" alt="..." style="z-index: 0;">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Beşinci Slayt</h5>
+                                <p>Açıklama.</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Önceki ve Sonraki Butonları -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#slaytIstanbul1" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Önceki</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#slaytIstanbul1" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Sonraki</span>
+                    </button>
+                </div>
+                <!-- SLAYT 1 BİTİŞ -->
+            </div><!-- col-md-9 bitiş -->
+            
+            
+            <div class="col-md-3">
+                <!-- SLAYT 2 BAŞLA -->
+                <div id="slaytIstanbul2" class="carousel slide">
+                    <!-- indikatör(slayt altı butonlar) başlangıç -->
+                    <div class="carousel-indicators-custom">
+                        <button type="button" data-bs-target="#slaytIstanbul2" data-bs-slide-to="0" aria-label="Slide 1">1</button>
+                        <button type="button" data-bs-target="#slaytIstanbul2" data-bs-slide-to="1" aria-label="Slide 2">2</button>
+                        <button type="button" data-bs-target="#slaytIstanbul2" data-bs-slide-to="2" aria-label="Slide 3">3</button>
+                        <button type="button" data-bs-target="#slaytIstanbul2" data-bs-slide-to="3" aria-label="Slide 4">4</button>
+                        <button type="button" data-bs-target="#slaytIstanbul2" data-bs-slide-to="4" aria-label="Slide 5">5</button>
+                    </div>
+                    <!-- indikatör bitiş -->
+            
+                    <div class="carousel-inner">
+                        <!-- 1. resim -->
+                        <div class="carousel-item active">
+                            <img src="images/kittap1.png" class="d-block w-100" alt="..." style="z-index: 0;">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                        </div>
+                        <!-- 2. resim -->
+                        <div class="carousel-item">
+                            <img src="images/kitap2.png" class="d-block w-100" alt="..." style="z-index: 0;">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                        </div>
+                        <!-- 3. resim -->
+                        <div class="carousel-item">
+                            <img src="images/kitap3.png" class="d-block w-100" alt="..." style="z-index: 0;">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                        </div>
+                        <!-- 4. resim -->
+                        <div class="carousel-item">
+                            <img src="images/kitap4.png" class="d-block w-100" alt="..." style="z-index: 0;">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                        </div>
+                        <!-- 5. resim -->
+                        <div class="carousel-item">
+                            <img src="images/kitap5.jpg" class="d-block w-100" alt="..." style="z-index: 0;">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Önceki ve Sonraki Butonları -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#slaytIstanbul2" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Önceki</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#slaytIstanbul2" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Sonraki</span>
+                    </button>
+                </div>
+                <!-- SLAYT 2 BİTİŞ -->
+            </div><!-- col-md-3 bitiş -->
+        </div>  <!-- row bitiş-->
+
+        <div class="row">
+            <!-- Makale Özetleri-->
+            <div class="col-md-9 siyah y100"> 
+                <div class="row">
+                    <div class="col-md-2 kirmizi">14.08.2024</div>
+                    <div class="col-md-10 turuncu">Kitap Yorumları</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 yesil y100">
+                        <img src="images/bashscript.jpg" alt="">
+                    </div>
+                    <div class="col-md-10 mavi y100">
+                        Bu yazımızda Bashcript ile Linux üzerinde Timer(Zamanlayıcı) Yapımını inceleyeceğiz.Belirttiğimiz saniye sonunda otomatik olarak mp3 çalan bir zamanlayıcı yapacağız. 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 yesil y100">
+                        <img src="images/bashscript.jpg" alt="">
+                    </div>
+                    <div class="col-md-10 mavi y100">
+                        Bu yazımızda Bashcript ile Linux üzerinde Timer(Zamanlayıcı) Yapımını inceleyeceğiz.Belirttiğimiz saniye sonunda otomatik olarak mp3 çalan bir zamanlayıcı yapacağız. 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 yesil y100">
+                        <img src="images/bashscript.jpg" alt="">
+                    </div>
+                    <div class="col-md-10 mavi  y100">
+                        Bu yazımızda Bashcript ile Linux üzerinde Timer(Zamanlayıcı) Yapımını inceleyeceğiz.Belirttiğimiz saniye sonunda otomatik olarak mp3 çalan bir zamanlayıcı yapacağız. 
+                    </div>
+                </div>
+                <!-- (Diğer makale özetleri...) -->
+            </div>
+            <!-- Kategoriler -->
+            <div class="col-md-3 y100 mt-2"> 
+                <span class="title-box">Kategoriler</span>
+                <ul class="kategoriler">
+                    <li>PHP</li>
+                    <li>C#</li>
+                    <li>Asp.net</li>
+                    <li>Bootstrap</li>
+                    <li>Linux</li>
+                    <li>Laravel</li>
+                    <li>MySQL</li>
+                    <li>SQL Server</li>
+                </ul>
+                <!-- (Diğer içerikler...) -->
+            </div>
+        </div>
+    </div>
+
+    <!-- pagination sayfalama -->
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-12 turuncu mt-2 pt-3 ">
+                <nav aria-label="...">
+                    <ul class="pagination saga-hizala">
+                        <li class="page-item disabled">
+                            <span class="page-link">Önceki</span>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active">
+                            <span class="page-link">2<span class="sr-only">(current)</span></span>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Sonraki</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer Alt Kısım -->
+    <div class="container-fluid siyah y300">
+        <div class="row">
+            <div class="col-md-3 gri y300 p-4">
+                <ul>
+                    <li>Ana Sayfa</li>
+                    <li>Hakkımda</li>
+                    <li>Kitap Yorumları</li>
+                    <li>Sunumlar</li>
+                    <li>Kategoriler</li>
+                    <ul>
+                        <li>C#</li>
+                        <li>ASP.net</li>
+                        <li>PHP</li>
+                    </ul>
+                    <li>İletişim</li>
+                </ul>
+            </div>
+            <div class="col-md-3 sari y100 p-4">
+                En çok izlenenler
+                <hr>
+            </div>
+            <div class="col-md-3 bordo y100 p-4">
+                Son yüklenen videolar
+                <hr>
+            </div>
+            <div class="col-md-3 mor y100 p-4">
+                Diğer Web Siteleri
+                <hr>
+                <ul>
+                    <li><a href="#">Site 1</a></li>
+                    <li><a href="#">Site 2</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- footer bitiş-->
+    <script>
+        var carousel = document.querySelector('#slaytIstanbul1');
+        var indicators = document.querySelectorAll('.carousel-indicators-custom span');
+
+        carousel.addEventListener('slid.bs.carousel', function (event) {
+            // İlk olarak tüm `span`'lardan `active` sınıfını kaldır
+            indicators.forEach(function(span) {
+                span.classList.remove('active');
+            });
+            
+            // Aktif slaytın index'ine göre doğru `span`'a `active` sınıfını ekle
+            var activeIndex = event.to; // Geçerli slaytın index'i
+            indicators[activeIndex].classList.add('active');
+        });
+
+        // Sayfa yüklendiğinde, başlangıçta aktif olan slaytı göstermek için:
+        document.addEventListener('DOMContentLoaded', function() {
+            var activeItem = document.querySelector('.carousel-item.active');
+            var activeIndex = Array.from(carousel.querySelectorAll('.carousel-item')).indexOf(activeItem);
+            indicators[activeIndex].classList.add('active');
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+    // Carousel, göstergeler ve butonlar
+    var carousel2 = document.querySelector('#slaytIstanbul2');
+    var indicators2 = document.querySelectorAll('#slaytIstanbul2 .carousel-indicators-custom button');
+    var prevButton2 = document.querySelector('#slaytIstanbul2 .carousel-control-prev');
+    var nextButton2 = document.querySelector('#slaytIstanbul2 .carousel-control-next');
+    
+    // Carousel geçişi tamamlandığında aktif `button` ve butonları güncelleyen kod
+    carousel2.addEventListener('slid.bs.carousel', function (event) {
+        // İlk olarak tüm `button` öğelerinden ve butonlardan `active` sınıfını kaldır
+        indicators2.forEach(function(button) {
+            button.classList.remove('active');
+        });
+        prevButton2.classList.remove('active');
+        nextButton2.classList.remove('active');
+        
+        // Aktif slaytın index'ini al
+        var activeIndex = event.to;
+        
+        // İlgili `button` öğesine `active` sınıfı ekle
+        indicators2[activeIndex].classList.add('active');
+        
+        // Geçişin yönüne göre butonları güncelle
+        if (event.direction === 'prev') {
+            prevButton2.classList.add('active');
+        }
+        if (event.direction === 'next') {
+            nextButton2.classList.add('active');
+        }
+        
+        // Başlangıçtaki ve son slaytları kontrol et ve butonları devre dışı bırak
+        if (activeIndex === 0) {
+            prevButton2.classList.add('disabled');
+        } else {
+            prevButton2.classList.remove('disabled');
+        }
+
+        if (activeIndex === carousel2.querySelectorAll('.carousel-item').length - 1) {
+            nextButton2.classList.add('disabled');
+        } else {
+            nextButton2.classList.remove('disabled');
+        }
+    });
+    
+    // Sayfa yüklendiğinde, başlangıçtaki aktif öğeleri ayarlama
+    var activeItem2 = document.querySelector('#slaytIstanbul2 .carousel-item.active');
+    var activeIndex2 = Array.from(carousel2.querySelectorAll('.carousel-item')).indexOf(activeItem2);
+    
+    // Başlangıçta aktif olan slaytı tespit et ve ilgili `button` öğesine `active` sınıfını ekle
+    indicators2[activeIndex2].classList.add('active');
+    
+    // Başlangıçtaki butonları doğru şekilde ayarla (ilk veya son slayt kontrolü)
+    if (activeIndex2 === 0) {
+        prevButton2.classList.add('disabled');
+    } else {
+        prevButton2.classList.remove('disabled');
+    }
+
+    if (activeIndex2 === carousel2.querySelectorAll('.carousel-item').length - 1) {
+        nextButton2.classList.add('disabled');
+    } else {
+        nextButton2.classList.remove('disabled');
+    }
+});
+
+    </script>
+
+</body>
+</html>
